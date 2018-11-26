@@ -100,7 +100,20 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/fastlanefolder.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/error3.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/error3_solve.png">
-<meta property="og:updated_time" content="2018-11-26T06:52:37.015Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/Jenkins1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins4.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins6.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins7.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins8.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins9.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins10.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins11.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins12.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins13.png">
+<meta property="og:updated_time" content="2018-11-26T09:23:27.430Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Jenkins+Fastlane+Fir&#x2F;Pgyer实现自动化打包">
 <meta name="twitter:description" content="一、传统打包的痛点 如果你有一台配置较高的MBP，冲杯咖啡回来，包已经打好了；如果你用的是配置较低的mac mini，去咖啡店喝杯咖啡回来，你的包还不定能打好；打包过程中，你唯一的做的就是等待，等待，待…  切换分支不方便  本来需要的是Release环境，你却选了Debug环境  打包完成后，需要手动上传到fir或者pgyer  09:00，测试人员：亲，给我打个包；  11:00，测试人员：你">
@@ -368,11 +381,23 @@
 <p>　　报错，访问报错信息里提供的苹果开发者网址，发现需要在项目中配置选项，如下：<br><img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/error3_solve.png" alt=""></p>
 <p>　　重新执行打包操作，等待完成，然后就能发现我们的包已经自动上传到蒲公英和Fir上了。<br>　　使用fastlane打包，可以解决传统打包痛点的1-4项，碰到第5项，你还是要自己执行打包脚本。这时我们引入Jenkins，让测试人员通过访问开发人员本地服务器地址来执行打包脚本。
 　　</p>
-<h4 id="三、Jenkins"><a href="#三、Jenkins" class="headerlink" title="三、Jenkins"></a>三、Jenkins</h4><p>  1.下载安装<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">JDK</a></p>
+<h4 id="三、Jenkins"><a href="#三、Jenkins" class="headerlink" title="三、Jenkins"></a>三、Jenkins</h4><p>  1.下载安装<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">JDK</a>，配置JDK环境变量</p>
 <p>  2.下载安装<a href="https://jenkins.io/download/" target="_blank" rel="noopener">Jenkins</a></p>
-<p>  安装完成后，Safari会自动弹出，</p>
-<p>  3.</p>
-<p>　　
+<p>  安装完成后，Safari会自动弹出，<br>  <img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/Jenkins1.png" alt=""></p>
+<p>  执行命令，查看其提供路径下的密码：<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cat <span class="regexp">/Users/</span>Shared<span class="regexp">/Jenkins/</span>Home<span class="regexp">/secrets/i</span>nitialAdminPassword</span><br></pre></td></tr></table></figure></p>
+<p>  <img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins2.png" alt=""><br>  <img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins3.png" alt=""><br>  <img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins4.png" alt=""><br>  <img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins5.png" alt=""><br>  <img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins6.png" alt=""><br>  <img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins7.png" alt=""></p>
+<p>  3.新建任务<br>  <img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins8.png" alt=""></p>
+<p>  General，无需配置<br>  源码管理：无需配置<br>  构建触发器：无需配置<br>  构建环境：无需配置</p>
+<p>  构建配置，添加“执行shell”：<br>  <img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins9.png" alt=""><br>  <img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins10.png" alt=""></p>
+<p>  构建后操作：无需配置</p>
+<p>  4.开始构建<br>  <img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins11.png" alt=""></p>
+<p>  这里看控制台输出<br>  <img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins12.png" alt=""></p>
+<p>  打包成功<br>  <img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins13.png" alt=""></p>
+<p>  5.至此，我们可以将自己的<a href="">ip地址:8080</a>，发给测试人员，这样测试人员可以自行打包，然后去蒲公英或者Fir上下载app。打包的时候，我们必须保证本地的jenkins服务是开启的，否则其他人员是无法访问你的链接的，如果没有开启，我们可以通过以下命令开启服务：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo launchctl unload /Library/LaunchDaemons/org<span class="selector-class">.jenkins-ci</span><span class="selector-class">.plist</span></span><br><span class="line">java -jar /Applications/Jenkins/jenkins<span class="selector-class">.war</span> --httpPort=<span class="number">8080</span></span><br></pre></td></tr></table></figure>
+<h4 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h4><p>　　单独使用Fastlane，或者单独使用Jenkins，其实都可以完成打包操作。单独使用Fastlane，开发人员需要自行打包，测试人员无法打包；单独使用Jenkins，打包配置过于繁琐，证书失效等情况会导致配置文件失效，导致打包时报。Fastlane和Jenkins相结合的打包方式，通过Jenkins执行Fastlane的打包脚本，无需复杂的配置，不同的项目只需要简单的修改脚本，支持测试人员自行打包。
+　　
+　　　
 　　</p>
 
       
@@ -534,7 +559,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、传统打包的痛点"><span class="nav-number">1.</span> <span class="nav-text">一、传统打包的痛点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、Fastlane"><span class="nav-number">2.</span> <span class="nav-text">二、Fastlane</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、Jenkins"><span class="nav-number">3.</span> <span class="nav-text">三、Jenkins</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、传统打包的痛点"><span class="nav-number">1.</span> <span class="nav-text">一、传统打包的痛点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、Fastlane"><span class="nav-number">2.</span> <span class="nav-text">二、Fastlane</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、Jenkins"><span class="nav-number">3.</span> <span class="nav-text">三、Jenkins</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、总结"><span class="nav-number">4.</span> <span class="nav-text">四、总结</span></a></li></ol></div>
             
           </div>
         </section>
