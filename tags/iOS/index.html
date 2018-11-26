@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="iOS菜鸟">
+<meta name="description" content="记录走过的痕迹">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Rudy&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/ios/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/iOS/index.html">
 <meta property="og:site_name" content="Rudy&#39;s Blog">
-<meta property="og:description" content="iOS菜鸟">
+<meta property="og:description" content="记录走过的痕迹">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Rudy&#39;s Blog">
-<meta name="twitter:description" content="iOS菜鸟">
+<meta name="twitter:description" content="记录走过的痕迹">
 
 
 
@@ -111,7 +111,7 @@
   };
 </script>
 
-  <title> 标签: ios | Rudy's Blog </title>
+  <title> 标签: iOS | Rudy's Blog </title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -233,7 +233,7 @@
   <div id="posts" class="posts-collapse">
     <div class="collection-title">
       <h2>
-        ios
+        iOS
         <small>标签</small>
       </h2>
     </div>
@@ -246,17 +246,17 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/2016/11/23/podsetupfail/" itemprop="url">
+            <a class="post-title-link" href="/2018/11/26/jenkins-fastlane-fir-pgyer/" itemprop="url">
               
-                <span itemprop="name">解决pod setup缓慢及失败的另一种方式</span>
+                <span itemprop="name">使用Jenkins+Fastlane+Fir/Pgyer实现自动化打包</span>
               
             </a>
         
       </h1>
 
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2016-11-23T09:04:16+08:00" content="2016-11-23">
-          11-23
+        <time class="post-time" itemprop="dateCreated" datetime="2018-11-26T09:35:38+08:00" content="2018-11-26">
+          11-26
         </time>
       </div>
 
@@ -299,12 +299,12 @@
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="Rudy">
           <p class="site-author-name" itemprop="name">Rudy</p>
-          <p class="site-description motion-element" itemprop="description">iOS菜鸟</p>
+          <p class="site-description motion-element" itemprop="description">记录走过的痕迹</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">1</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -312,7 +312,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -321,7 +321,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -531,66 +531,6 @@
       var query = new AV.Query(Counter);
 
       query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-  
-
-</body>
-</html>
-url);
       query.find({
         success: function(results) {
           if (results.length > 0) {

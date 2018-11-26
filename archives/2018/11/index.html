@@ -87,7 +87,7 @@
 <meta name="description" content="记录走过的痕迹">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Rudy&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/archives/2018/11/index.html">
 <meta property="og:site_name" content="Rudy&#39;s Blog">
 <meta property="og:description" content="记录走过的痕迹">
 <meta property="og:locale" content="zh-Hans">
@@ -111,7 +111,7 @@
   };
 </script>
 
-  <title> Rudy's Blog </title>
+  <title> 归档 | Rudy's Blog </title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -132,9 +132,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left  page-archive  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -231,160 +229,65 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <section id="posts" class="posts-collapse">
+    <span class="archive-move-on"></span>
+
+    <span class="archive-page-counter">
+      
+      
+      
+        
+      
+      嗯..! 目前共计 1 篇日志。 继续努力。
+    </span>
+
     
+
+      
+      
       
 
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
+      
         
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2018/11/26/jenkins-fastlane-fir-pgyer/" itemprop="url">
-                  使用Jenkins+Fastlane+Fir/Pgyer实现自动化打包
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-11-26T09:35:38+08:00" content="2018-11-26">
-              2018-11-26
-            </time>
-          </span>
-
-          
-            <span class="post-category">
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2018/11/26/jenkins-fastlane-fir-pgyer/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/11/26/jenkins-fastlane-fir-pgyer/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2018/11/26/jenkins-fastlane-fir-pgyer/" class="leancloud_visitors" data-flag-title="使用Jenkins+Fastlane+Fir/Pgyer实现自动化打包">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
+        <div class="collection-title">
+          <h2 class="archive-year motion-element" id="archive-year-2018">2018</h2>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
       
       
 
       
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
         
-          
-            <p>####一、传统打包的痛点</p>
-<ol>
-<li><p>如果你有一台配置较高的MBP，冲杯咖啡回来，包已经打好了；如果你用的是配置较低的mac mini，去咖啡店喝杯咖啡回来，你的包还不定能打好；打包过程中，你唯一的做的就是等待，等待，待…</p>
-</li>
-<li><p>切换分支不方便</p>
-</li>
-<li><p>本来需要的是Release环境，你却选了Debug环境</p>
-</li>
-<li><p>打包完成后，需要手动上传到fir或者pgyer</p>
-</li>
-<li><p>09:00，测试人员：亲，给我打个包；</p>
-<p> 11:00，测试人员：你这里有个bug，修复下，然后给我打个包；</p>
-<p> 15:00，测试人员：你这个按钮往右多偏移了5个像素，改完打个包；</p>
-<p> 17:00，测试人员：我要个正式环境的包</p>
-</li>
-</ol>
-<p>####二、Fastlane<br>　　Fastlane是一套可以简化iOS和Android开发人员繁琐任务的自动化工具，如生成屏幕截图、处理配置文件以及发布应用程序。Fastlane的详细使用，可以参考其<a href="https://docs.fastlane.tools/" target="_blank" rel="noopener">使用文档</a>。</p>
-<p>　　1.安装Xcode命令行开发者工具</p>
-<p>　　<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">　　xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure></p>
-<p>　　如果没有安装，会弹出安装提示
-　　</p>
-
-          
+            <a class="post-title-link" href="/2018/11/26/jenkins-fastlane-fir-pgyer/" itemprop="url">
+              
+                <span itemprop="name">使用Jenkins+Fastlane+Fir/Pgyer实现自动化打包</span>
+              
+            </a>
         
-      
-    </div>
+      </h1>
 
-    <div>
-      
-    </div>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2018-11-26T09:35:38+08:00" content="2018-11-26">
+          11-26
+        </time>
+      </div>
 
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    </header>
   </article>
 
 
+
     
+
   </section>
 
   
+
 
 
           </div>
@@ -563,6 +466,12 @@
 
 
   
+  
+    <script type="text/javascript" id="motion.page.archive">
+      $('.archive-year').velocity('transition.slideLeftIn');
+    </script>
+  
+
 
   
 

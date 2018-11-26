@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="iOS,打包,">
 
 
 
@@ -84,16 +84,18 @@
 
 
 
-<meta name="description" content="记录走过的痕迹">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Rudy&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="####一、传统打包的痛点  如果你有一台配置较高的MBP，冲杯咖啡回来，包已经打好了；如果你用的是配置较低的mac mini，去咖啡店喝杯咖啡回来，你的包还不定能打好；打包过程中，你唯一的做的就是等待，等待，待…  切换分支不方便  本来需要的是Release环境，你却选了Debug环境  打包完成后，需要手动上传到fir或者pgyer  09:00，测试人员：亲，给我打个包；  11:00，测">
+<meta name="keywords" content="iOS,打包">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Jenkins+Fastlane+Fir&#x2F;Pgyer实现自动化打包">
+<meta property="og:url" content="http://yoursite.com/2018/11/26/jenkins-fastlane-fir-pgyer/index.html">
 <meta property="og:site_name" content="Rudy&#39;s Blog">
-<meta property="og:description" content="记录走过的痕迹">
+<meta property="og:description" content="####一、传统打包的痛点  如果你有一台配置较高的MBP，冲杯咖啡回来，包已经打好了；如果你用的是配置较低的mac mini，去咖啡店喝杯咖啡回来，你的包还不定能打好；打包过程中，你唯一的做的就是等待，等待，待…  切换分支不方便  本来需要的是Release环境，你却选了Debug环境  打包完成后，需要手动上传到fir或者pgyer  09:00，测试人员：亲，给我打个包；  11:00，测">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-26T02:39:52.808Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Rudy&#39;s Blog">
-<meta name="twitter:description" content="记录走过的痕迹">
+<meta name="twitter:title" content="使用Jenkins+Fastlane+Fir&#x2F;Pgyer实现自动化打包">
+<meta name="twitter:description" content="####一、传统打包的痛点  如果你有一台配置较高的MBP，冲杯咖啡回来，包已经打好了；如果你用的是配置较低的mac mini，去咖啡店喝杯咖啡回来，你的包还不定能打好；打包过程中，你唯一的做的就是等待，等待，待…  切换分支不方便  本来需要的是Release环境，你却选了Debug环境  打包完成后，需要手动上传到fir或者pgyer  09:00，测试人员：亲，给我打个包；  11:00，测">
 
 
 
@@ -111,7 +113,7 @@
   };
 </script>
 
-  <title> Rudy's Blog </title>
+  <title> 使用Jenkins+Fastlane+Fir/Pgyer实现自动化打包 | Rudy's Blog </title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -132,9 +134,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -231,9 +231,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -253,10 +253,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2018/11/26/jenkins-fastlane-fir-pgyer/" itemprop="url">
-                  使用Jenkins+Fastlane+Fir/Pgyer实现自动化打包
-                </a>
+                使用Jenkins+Fastlane+Fir/Pgyer实现自动化打包
               
             
           </h1>
@@ -331,9 +328,7 @@
       
 
       
-        
-          
-            <p>####一、传统打包的痛点</p>
+        <p>####一、传统打包的痛点</p>
 <ol>
 <li><p>如果你有一台配置较高的MBP，冲杯咖啡回来，包已经打好了；如果你用的是配置较低的mac mini，去咖啡店喝杯咖啡回来，你的包还不定能打好；打包过程中，你唯一的做的就是等待，等待，待…</p>
 </li>
@@ -355,36 +350,67 @@
 <p>　　如果没有安装，会弹出安装提示
 　　</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
       
     </div>
 
     <div>
       
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>请walkstep喝奶茶</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://oetpv7kic.bkt.clouddn.com/wechat-reward-image.png" alt="Rudy WeChat Pay">
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://oetpv7kic.bkt.clouddn.com/alipay-reward-image.png" alt="Rudy Alipay">
+          <p>支付宝打赏</p>
+        </div>
+      
     </div>
+  </div>
 
-    <div>
+
       
     </div>
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag">#iOS</a>
+          
+            <a href="/tags/打包/" rel="tag">#打包</a>
+          
+        </div>
       
 
       
+
       
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -392,6 +418,13 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2018/11/26/jenkins-fastlane-fir-pgyer/" data-title="使用Jenkins+Fastlane+Fir/Pgyer实现自动化打包" data-url="http://yoursite.com/2018/11/26/jenkins-fastlane-fir-pgyer/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -411,8 +444,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="Rudy">
           <p class="site-author-name" itemprop="name">Rudy</p>
@@ -460,6 +502,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -563,6 +616,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
