@@ -113,7 +113,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins11.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins12.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins13.png">
-<meta property="og:updated_time" content="2018-11-26T09:23:27.430Z">
+<meta property="og:updated_time" content="2018-12-04T09:58:16.415Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Jenkins+Fastlane+Fir&#x2F;Pgyer实现自动化打包">
 <meta name="twitter:description" content="一、传统打包的痛点 如果你有一台配置较高的MBP，冲杯咖啡回来，包已经打好了；如果你用的是配置较低的mac mini，去咖啡店喝杯咖啡回来，你的包还不定能打好；打包过程中，你唯一的做的就是等待，等待，待…  切换分支不方便  本来需要的是Release环境，你却选了Debug环境  打包完成后，需要手动上传到fir或者pgyer  09:00，测试人员：亲，给我打个包；  11:00，测试人员：你">
@@ -365,7 +365,7 @@
 <p> 17:00，测试人员：我要个正式环境的包</p>
 </li>
 </ol>
-<h4 id="二、Fastlane"><a href="#二、Fastlane" class="headerlink" title="二、Fastlane"></a>二、Fastlane</h4><p>　　Fastlane是一套可以简化iOS和Android开发人员繁琐任务的自动化工具，如生成屏幕截图、处理配置文件以及发布应用程序。Fastlane的详细使用，可以参考其<a href="https://docs.fastlane.tools/" target="_blank" rel="noopener">使用文档</a>。</p>
+<h4 id="二、Fastlane"><a href="#二、Fastlane" class="headerlink" title="二、Fastlane"></a>二、Fastlane</h4><p>　　Fastlane是一套可以简化iOS和Android开发人员繁琐任务的自动化工具，如生成屏幕截图、处理配置文件以及发布应用程序。Fastlane的详细使用，可以参考其<a href="https://docs.fastlane.tools/" target="_blank" rel="noopener">使用文档</a>。<br>　　<a id="more"></a></p>
 <p>　　1.安装Xcode命令行开发者工具<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">　　xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure></p>
 <p>　　如果没有安装，会弹出安装提示<br>　　<img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/install.png" alt=""></p>
 <p>　　2.安装Fastlane<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gem <span class="keyword">install</span> fastlane -NV</span><br></pre></td></tr></table></figure></p>
@@ -412,27 +412,6 @@
     <div>
       
         
-  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-    <div>请walkstep喝奶茶</div>
-    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-      <span>赏</span>
-    </button>
-    <div id="QR" style="display: none;">
-      
-        <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="http://oetpv7kic.bkt.clouddn.com/wechat-reward-image.png" alt="Rudy WeChat Pay">
-          <p>微信打赏</p>
-        </div>
-      
-      
-        <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="http://oetpv7kic.bkt.clouddn.com/alipay-reward-image.png" alt="Rudy Alipay">
-          <p>支付宝打赏</p>
-        </div>
-      
-    </div>
-  </div>
-
 
       
     </div>
@@ -448,6 +427,20 @@
         </div>
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/04/本地管理多个git账号/" rel="prev" title="本地管理多个git账号">
+                本地管理多个git账号 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -513,7 +506,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -521,7 +514,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -530,7 +523,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

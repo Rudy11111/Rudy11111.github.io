@@ -254,6 +254,138 @@
             
               
                 
+                <a class="post-title-link" href="/2018/12/04/本地管理多个git账号/" itemprop="url">
+                  本地管理多个git账号
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-12-04T16:40:05+08:00" content="2018-12-04">
+              2018-12-04
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/12/04/本地管理多个git账号/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/12/04/本地管理多个git账号/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2018/12/04/本地管理多个git账号/" class="leancloud_visitors" data-flag-title="本地管理多个git账号">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/GitAccount/git_account_cover.png" alt=""></p>
+<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>本来电脑本地只存在一个git账号，用于提交项目代码。近期重新搭建了博客，站点托管在github上。在gitee上又新建了一个仓库，用来备份博客。首次提交到github或者gitee上，会提示输入密码，再次提交，可能不再提示密码，当你做push操作时，会提示你没有权限，因为git无法区分到底是用哪个账号进行操作。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2018/12/04/本地管理多个git账号/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </p></div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2018/11/26/jenkins-fastlane-fir-pgyer/" itemprop="url">
                   使用Jenkins+Fastlane+Fir/Pgyer实现自动化打包
                 </a>
@@ -332,8 +464,7 @@
 
       
         
-          
-            <h4 id="一、传统打包的痛点"><a href="#一、传统打包的痛点" class="headerlink" title="一、传统打包的痛点"></a>一、传统打包的痛点</h4><ol>
+          <h4 id="一、传统打包的痛点"><a href="#一、传统打包的痛点" class="headerlink" title="一、传统打包的痛点"></a>一、传统打包的痛点</h4><ol>
 <li><p>如果你有一台配置较高的MBP，冲杯咖啡回来，包已经打好了；如果你用的是配置较低的mac mini，去咖啡店喝杯咖啡回来，你的包还不定能打好；打包过程中，你唯一的做的就是等待，等待，待…</p>
 </li>
 <li><p>切换分支不方便</p>
@@ -348,45 +479,15 @@
 <p> 17:00，测试人员：我要个正式环境的包</p>
 </li>
 </ol>
-<h4 id="二、Fastlane"><a href="#二、Fastlane" class="headerlink" title="二、Fastlane"></a>二、Fastlane</h4><p>　　Fastlane是一套可以简化iOS和Android开发人员繁琐任务的自动化工具，如生成屏幕截图、处理配置文件以及发布应用程序。Fastlane的详细使用，可以参考其<a href="https://docs.fastlane.tools/" target="_blank" rel="noopener">使用文档</a>。</p>
-<p>　　1.安装Xcode命令行开发者工具<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">　　xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure></p>
-<p>　　如果没有安装，会弹出安装提示<br>　　<img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/install.png" alt=""></p>
-<p>　　2.安装Fastlane<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gem <span class="keyword">install</span> fastlane -NV</span><br></pre></td></tr></table></figure></p>
-<p>　　报错<br>　　<img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/error1.png" alt=""><br>　　改为<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gem <span class="keyword">install</span> -n /usr/<span class="keyword">local</span>/<span class="keyword">bin</span> fastlane -NV</span><br></pre></td></tr></table></figure></p>
-<p>　　3.初始化Fastlane<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> 项目目录</span><br><span class="line">fastlane init</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/fastlaneinit.png" alt=""></p>
-<p>　　初始化时会出现4个选项：<br>　　1.Automate screenshots：截图<br>　　2.Automate beta distribution to TestFlight：上传到TestFlight<br>　　3.Automate App Store distribution：上传到App Store<br>　　4.Manual setup - manually setup your project to automate your tasks：自定义<br>　　<br>　　选择3，输入开发者账号和密码，报错<br>　　<img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/error2.png" alt=""><br>　　因为我用的是企业证书，无法上传到App Store，回滚后，重新选择4<br>　　<img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/success1.png" alt=""><br>　　按照提示Enter<br>　　<br>　　4.完成后，项目目录里会生成一个fastlane文件夹<br>　　<img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/fastlanefolder.png" alt=""><br>　　<br>　　Appfile用来存放App的bundleID和teamID，Fastfile用来存储打包的脚本。<br>　　如果上传到蒲公英，需要安装蒲公英的插件：<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">fastlane</span> <span class="keyword">add_plugin </span>pgyer</span><br></pre></td></tr></table></figure></p>
-<p>　　如果上传到Fir，需要安装Fir的插件：<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">fastlane</span> <span class="keyword">add_plugin </span>firim</span><br></pre></td></tr></table></figure></p>
-<p>　　Fastfile里我的参考脚本：</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">default_platform(<span class="symbol">:ios</span>)</span><br><span class="line"></span><br><span class="line">platform <span class="symbol">:ios</span> <span class="keyword">do</span></span><br><span class="line">  desc <span class="string">"打Release包"</span></span><br><span class="line">  lane <span class="symbol">:Release</span> <span class="keyword">do</span></span><br><span class="line">    gym(</span><br><span class="line">    	<span class="symbol">clean:</span><span class="keyword">true</span>, <span class="comment">#打包前clean项目</span></span><br><span class="line">    	<span class="symbol">export_method:</span><span class="string">"enterprise"</span>, <span class="comment">#导出方式</span></span><br><span class="line">    	<span class="symbol">configuration:</span><span class="string">"Release"</span>, <span class="comment">#环境</span></span><br><span class="line">    	<span class="symbol">output_directory:</span><span class="string">"./app"</span>, <span class="comment">#ipa的存放目录</span></span><br><span class="line">    	<span class="symbol">output_name:</span>get_build_number(), <span class="comment">#输出ipa的文件名为当前的build号</span></span><br><span class="line">       <span class="symbol">export_xcargs:</span> <span class="string">"-allowProvisioningUpdates"</span> <span class="comment">#Xcode 9及以上没有权限获取钥匙串里面的证书，必须加上这个才能打包成功</span></span><br><span class="line">    	)</span><br><span class="line">    	</span><br><span class="line">    	<span class="comment">#打包到蒲公英</span></span><br><span class="line">    	pgyer(<span class="symbol">api_key:</span> <span class="string">"c682339xxxxxxxxxxxx"</span>, <span class="symbol">user_key:</span> <span class="string">"f61a83xxxxxxxxxxx"</span>)</span><br><span class="line">    	</span><br><span class="line">    	<span class="comment">#打包到Fir</span></span><br><span class="line">    	firim(<span class="symbol">firim_api_token:</span><span class="string">"d7387f15xxxxxxxxxx"</span>)</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>　　我们通过不同的lane，来执行不同的打包操作，因此可以根据需求来添加lane。这里我们执行打Release包操作：<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">fastlane Release</span></span><br></pre></td></tr></table></figure></p>
-<p><img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/error3.png" alt=""></p>
-<p>　　报错，访问报错信息里提供的苹果开发者网址，发现需要在项目中配置选项，如下：<br><img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/error3_solve.png" alt=""></p>
-<p>　　重新执行打包操作，等待完成，然后就能发现我们的包已经自动上传到蒲公英和Fir上了。<br>　　使用fastlane打包，可以解决传统打包痛点的1-4项，碰到第5项，你还是要自己执行打包脚本。这时我们引入Jenkins，让测试人员通过访问开发人员本地服务器地址来执行打包脚本。
-　　</p>
-<h4 id="三、Jenkins"><a href="#三、Jenkins" class="headerlink" title="三、Jenkins"></a>三、Jenkins</h4><p>  1.下载安装<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">JDK</a>，配置JDK环境变量</p>
-<p>  2.下载安装<a href="https://jenkins.io/download/" target="_blank" rel="noopener">Jenkins</a></p>
-<p>  安装完成后，Safari会自动弹出，<br>  <img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/Jenkins1.png" alt=""></p>
-<p>  执行命令，查看其提供路径下的密码：<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cat <span class="regexp">/Users/</span>Shared<span class="regexp">/Jenkins/</span>Home<span class="regexp">/secrets/i</span>nitialAdminPassword</span><br></pre></td></tr></table></figure></p>
-<p>  <img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins2.png" alt=""><br>  <img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins3.png" alt=""><br>  <img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins4.png" alt=""><br>  <img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins5.png" alt=""><br>  <img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins6.png" alt=""><br>  <img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins7.png" alt=""></p>
-<p>  3.新建任务<br>  <img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins8.png" alt=""></p>
-<p>  General，无需配置<br>  源码管理：无需配置<br>  构建触发器：无需配置<br>  构建环境：无需配置</p>
-<p>  构建配置，添加“执行shell”：<br>  <img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins9.png" alt=""><br>  <img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins10.png" alt=""></p>
-<p>  构建后操作：无需配置</p>
-<p>  4.开始构建<br>  <img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins11.png" alt=""></p>
-<p>  这里看控制台输出<br>  <img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins12.png" alt=""></p>
-<p>  打包成功<br>  <img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/Jenkins%2BFastlane%2BFir%3APgyer/jenkins13.png" alt=""></p>
-<p>  5.至此，我们可以将自己的<a href="">ip地址:8080</a>，发给测试人员，这样测试人员可以自行打包，然后去蒲公英或者Fir上下载app。打包的时候，我们必须保证本地的jenkins服务是开启的，否则其他人员是无法访问你的链接的，如果没有开启，我们可以通过以下命令开启服务：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo launchctl unload /Library/LaunchDaemons/org<span class="selector-class">.jenkins-ci</span><span class="selector-class">.plist</span></span><br><span class="line">java -jar /Applications/Jenkins/jenkins<span class="selector-class">.war</span> --httpPort=<span class="number">8080</span></span><br></pre></td></tr></table></figure>
-<h4 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h4><p>　　单独使用Fastlane，或者单独使用Jenkins，其实都可以完成打包操作。单独使用Fastlane，开发人员需要自行打包，测试人员无法打包；单独使用Jenkins，打包配置过于繁琐，证书失效等情况会导致配置文件失效，导致打包时报。Fastlane和Jenkins相结合的打包方式，通过Jenkins执行Fastlane的打包脚本，无需复杂的配置，不同的项目只需要简单的修改脚本，支持测试人员自行打包。
-　　
-　　　
-　　</p>
-
-          
+<h4 id="二、Fastlane"><a href="#二、Fastlane" class="headerlink" title="二、Fastlane"></a>二、Fastlane</h4><p>　　Fastlane是一套可以简化iOS和Android开发人员繁琐任务的自动化工具，如生成屏幕截图、处理配置文件以及发布应用程序。Fastlane的详细使用，可以参考其<a href="https://docs.fastlane.tools/" target="_blank" rel="noopener">使用文档</a>。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2018/11/26/jenkins-fastlane-fir-pgyer/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
-    </div>
+    </p></div>
 
     <div>
       
@@ -449,7 +550,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -457,7 +558,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -466,7 +567,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
