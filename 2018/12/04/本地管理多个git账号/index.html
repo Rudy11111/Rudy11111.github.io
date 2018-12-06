@@ -112,19 +112,19 @@
 
 
 
-  <meta name="description" content="前言本来电脑本地只存在一个git账号，用于提交项目代码。近期重新搭建了博客，站点托管在github上。在gitee上又新建了一个仓库，用来备份博客。首次提交到github或者gitee上，会提示输入密码，再次提交，可能不再提示密码，当你做push操作时，会提示你没有权限，因为git无法区分到底是用哪个账号进行操作。">
+  <meta name="description" content="前言本来电脑本地只存在一个git账号，用于提交项目代码。近期重新搭建了博客，站点托管在github上。在gitee上又新建了一个仓库，用来备份博客。首次提交到github或者gitee上，会提示输入密码，再次提交，可能不再提示密码，当你做push操作时，会提示你没有权限，因为git无法区分到底是用哪个账号进行操作。 如果能够通过一个文件来管理多个账号，并且根据不同的仓库来自动选择不同的账号来执行">
 <meta name="keywords" content="Git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="本地管理多个git账号">
 <meta property="og:url" content="http://yoursite.com/2018/12/04/本地管理多个git账号/index.html">
 <meta property="og:site_name" content="Rudy&#39;s Blog">
-<meta property="og:description" content="前言本来电脑本地只存在一个git账号，用于提交项目代码。近期重新搭建了博客，站点托管在github上。在gitee上又新建了一个仓库，用来备份博客。首次提交到github或者gitee上，会提示输入密码，再次提交，可能不再提示密码，当你做push操作时，会提示你没有权限，因为git无法区分到底是用哪个账号进行操作。">
+<meta property="og:description" content="前言本来电脑本地只存在一个git账号，用于提交项目代码。近期重新搭建了博客，站点托管在github上。在gitee上又新建了一个仓库，用来备份博客。首次提交到github或者gitee上，会提示输入密码，再次提交，可能不再提示密码，当你做push操作时，会提示你没有权限，因为git无法区分到底是用哪个账号进行操作。 如果能够通过一个文件来管理多个账号，并且根据不同的仓库来自动选择不同的账号来执行">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/GitAccount/git_account_cover.png">
-<meta property="og:updated_time" content="2018-12-04T09:55:17.269Z">
+<meta property="og:updated_time" content="2018-12-06T05:59:11.254Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="本地管理多个git账号">
-<meta name="twitter:description" content="前言本来电脑本地只存在一个git账号，用于提交项目代码。近期重新搭建了博客，站点托管在github上。在gitee上又新建了一个仓库，用来备份博客。首次提交到github或者gitee上，会提示输入密码，再次提交，可能不再提示密码，当你做push操作时，会提示你没有权限，因为git无法区分到底是用哪个账号进行操作。">
+<meta name="twitter:description" content="前言本来电脑本地只存在一个git账号，用于提交项目代码。近期重新搭建了博客，站点托管在github上。在gitee上又新建了一个仓库，用来备份博客。首次提交到github或者gitee上，会提示输入密码，再次提交，可能不再提示密码，当你做push操作时，会提示你没有权限，因为git无法区分到底是用哪个账号进行操作。 如果能够通过一个文件来管理多个账号，并且根据不同的仓库来自动选择不同的账号来执行">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/GitAccount/git_account_cover.png">
 
 
@@ -400,12 +400,24 @@
                 
               
 
-              <time title="创建时间：2018-12-04 16:40:05 / 修改时间：17:55:17" itemprop="dateCreated datePublished" datetime="2018-12-04T16:40:05+08:00">2018-12-04</time>
+              <time title="创建时间：2018-12-04 16:40:05" itemprop="dateCreated datePublished" datetime="2018-12-04T16:40:05+08:00">2018-12-04</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-06 13:59:11" itemprop="dateModified" datetime="2018-12-06T13:59:11+08:00">2018-12-06</time>
               
             
           </span>
@@ -485,8 +497,8 @@
 
       
         <p><img src="https://raw.githubusercontent.com/Rudy11111/BlogImage/master/GitAccount/git_account_cover.png" alt=""></p>
-<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>本来电脑本地只存在一个git账号，用于提交项目代码。近期重新搭建了博客，站点托管在github上。在gitee上又新建了一个仓库，用来备份博客。首次提交到github或者gitee上，会提示输入密码，再次提交，可能不再提示密码，当你做push操作时，会提示你没有权限，因为git无法区分到底是用哪个账号进行操作。<br><a id="more"></a></p>
-<p>如果能够通过一个文件来管理多个账号，并且根据不同的仓库来自动选择不同的账号来执行git操作，那将会是一件多么愉快的事。下面我们就来完成这件愉快的事。</p>
+<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>本来电脑本地只存在一个git账号，用于提交项目代码。近期重新搭建了博客，站点托管在github上。在gitee上又新建了一个仓库，用来备份博客。首次提交到github或者gitee上，会提示输入密码，再次提交，可能不再提示密码，当你做push操作时，会提示你没有权限，因为git无法区分到底是用哪个账号进行操作。</p>
+<p>如果能够通过一个文件来管理多个账号，并且根据不同的仓库来自动选择不同的账号来执行git操作，那将会是一件多么愉快的事。下面我们就来完成这件愉快的事。<br><a id="more"></a></p>
 <h4 id="配置SSH密钥"><a href="#配置SSH密钥" class="headerlink" title="配置SSH密钥"></a>配置SSH密钥</h4><p>这里涉及到三个git账号，公司git账号：company_account，博客站点git账号：website_account，博客备份git账号：blog_account</p>
 <p>1.分别生成company_account，website_account，blog_account对应的rsa和rsa.pub文件</p>
 <figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -<span class="built_in">t</span> rsa -C <span class="string">"company_account"</span></span><br></pre></td></tr></table></figure>
@@ -618,7 +630,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -635,7 +647,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -658,7 +672,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
